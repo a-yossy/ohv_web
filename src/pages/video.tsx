@@ -23,7 +23,7 @@ const Video: NextPage = () => {
             allowFullScreen
           ></iframe>
           <br />
-          {video.title}
+          <div className={styles.videoTitle}>{video.title}</div>
         </div>
       ))}
     </div>

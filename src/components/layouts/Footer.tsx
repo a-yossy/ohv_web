@@ -11,7 +11,7 @@ import styles from 'styles/components/layouts/Footer.module.scss';
 
 export const Footer: FC = () => (
   <footer className={styles.footer}>
-    <hr />
+    <hr className={styles.line} />
     <div className={styles.icons}>
       <a
         className={styles.icon}
