@@ -4,7 +4,7 @@ import topImage from 'public/top.jpg';
 import styles from 'styles/pages/index.module.scss';
 
 const Top: NextPage = () => (
-  <div className={styles.top}>
+  <div className={styles.imageContainer}>
     <Image className={styles.image} src={topImage} alt='トップページ画像' />
   </div>
 );
