@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "1st Demo - Trailer",
+    "publishedOn": "2018-10-05",
+    "youtubeIdentifier": "zY7ZE9kwS1A"
+  },
+  {
+    "id": 2,
+    "title": "1stEP「錯綜」 - Thistle",
+    "publishedOn": "2019-12-26",
+    "youtubeIdentifier": "Z6hH7TJGgh4"
+  },
+  {
+    "id": 3,
+    "title": "1st single - 秘すれば花",
+    "publishedOn": "2020-12-17",
+    "youtubeIdentifier": "x7JCmITFm7U"
+  },
+  {
+    "id": 4,
+    "title": "2nd single - 揺るがない距離は今",
+    "publishedOn": "2021-06-06",
+    "youtubeIdentifier": "sT5hf_eNDNA"
+  }
+]
