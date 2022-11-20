@@ -1,5 +1,25 @@
 header.header {
-  background: rgb(11, 0, 215);
-  height: 50px;
+  background: rgb(16, 18, 30);
   margin-bottom: 40px;
+}
+
+div.rightLinks,
+div.leftLinks {
+  display: inline-flex;
+  height: 60px;
+  align-items: center;
+}
+
+div.leftLinks {
+  a.logo {
+    margin-left: 35px;
+  }
+}
+
+div.rightLinks {
+  float: right;
+
+  a.rightLink {
+    margin-right: 35px;
+  }
 }
