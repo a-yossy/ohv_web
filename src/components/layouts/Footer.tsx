@@ -19,7 +19,7 @@ export const Footer: FC = () => (
         target='_blank'
         rel='noopener noreferrer'
       >
-        <FaTwitter size={25} color='#fff' />
+        <FaTwitter size={25} />
       </a>
 
       <a
