@@ -1,0 +1,9 @@
+.imageContainer {
+  text-align: center;
+
+  .image {
+    object-fit: contain;
+    width: 90% !important;
+    height: unset !important;
+  }
+}
