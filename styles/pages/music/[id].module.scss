@@ -1,0 +1,48 @@
+$width: 560px;
+
+div.description {
+  width: $width;
+  margin-right: auto;
+  margin-left: auto;
+
+  div.type {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  div.title {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  div.release {
+    text-align: center;
+  }
+
+  div.song {
+    white-space: pre-line;
+  }
+
+  div.link {
+    margin-top: 5px;
+    color: rgb(201, 201, 151);
+  }
+
+  hr.line {
+    border-width: 0.1px 0 0 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+div.imageContainer {
+  position: unset !important;
+  text-align: center;
+
+  img.image {
+    object-fit: contain;
+    position: relative !important;
+    width: 560px !important;
+    margin-top: 50px;
+  }
+}

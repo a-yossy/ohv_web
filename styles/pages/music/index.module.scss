@@ -1,0 +1,16 @@
+div.title {
+  text-align: center;
+  font-size: 30px;
+}
+
+div.imageContainer {
+  position: unset !important;
+  text-align: center;
+
+  img.image {
+    object-fit: contain;
+    position: relative !important;
+    width: 560px !important;
+    margin-top: 50px;
+  }
+}
