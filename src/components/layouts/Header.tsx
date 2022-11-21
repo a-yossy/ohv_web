@@ -11,12 +11,12 @@ export const Header: FC = () => (
     </div>
     <div className={styles.rightLinks}>
       <Link className={styles.rightLink} href='/'>
-        NEWS
+        BIO
       </Link>
       <Link className={styles.rightLink} href='/'>
         LIVE
       </Link>
-      <Link className={styles.rightLink} href='/'>
+      <Link className={styles.rightLink} href='/music'>
         MUSIC
       </Link>
       <Link className={styles.rightLink} href='/video'>
