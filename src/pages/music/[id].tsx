@@ -1,11 +1,11 @@
 import type { NextPage, GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import Head from 'next/head';
+import { format } from 'date-fns';
 import { client } from 'src/libs/client';
 import { Music } from 'src/specific/types/music';
 import NotFoundError from 'src/pages/404';
 import styles from 'styles/pages/music/[id].module.scss';
-import { format } from 'date-fns';
 
 type Props = {
   music: Music | undefined;
@@ -18,7 +18,7 @@ const Music: NextPage<Props> = ({ music }) => {
     <>
       <Head>
         <title>{music.title} | Outside Her Vision Official Website</title>
-        <meta name='description' content='Top' />
+        <meta name='description' content='music detail' />
       </Head>
       <div className={styles.imageContainer}>
         <Image
@@ -47,6 +47,8 @@ const Music: NextPage<Props> = ({ music }) => {
     </>
   );
 };
+
+export default Music;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data: { contents: Music[] } = await client.get({
@@ -77,5 +79,3 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {},
   };
 };
-
-export default Music;

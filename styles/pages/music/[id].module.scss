@@ -42,7 +42,7 @@ div.imageContainer {
   img.image {
     object-fit: contain;
     position: relative !important;
-    width: 560px !important;
+    width: $width !important;
     margin-top: 50px;
   }
 }

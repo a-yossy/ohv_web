@@ -23,7 +23,7 @@ const Index: NextPage<Props> = ({ data }) => {
     <>
       <Head>
         <title>MUSIC | Outside Her Vision Official Website</title>
-        <meta name='description' content='Top' />
+        <meta name='description' content='music' />
       </Head>
       <div className={styles.title}>MUSIC</div>
       {musics.map((music) => (
@@ -44,6 +44,8 @@ const Index: NextPage<Props> = ({ data }) => {
   );
 };
 
+export default Index;
+
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const data = await client.get({
     endpoint: 'musics',
@@ -55,5 +57,3 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     },
   };
 };
-
-export default Index;

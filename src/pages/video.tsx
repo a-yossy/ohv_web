@@ -21,7 +21,7 @@ const Video: NextPage<Props> = ({ data }) => {
     <>
       <Head>
         <title>VIDEO | Outside Her Vision Official Website</title>
-        <meta name='description' content='Top' />
+        <meta name='description' content='video' />
       </Head>
       <div>
         <div className={styles.title}>VIDEO</div>
@@ -45,6 +45,8 @@ const Video: NextPage<Props> = ({ data }) => {
   );
 };
 
+export default Video;
+
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const data = await client.get({
     endpoint: 'videos',
@@ -56,5 +58,3 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     },
   };
 };
-
-export default Video;
