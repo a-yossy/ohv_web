@@ -1,6 +1,5 @@
 import { NextPage, GetStaticProps } from 'next';
 import Link from 'next/link';
-import Image from 'next/image';
 import Head from 'next/head';
 import { format } from 'date-fns';
 import { client } from 'src/libs/client';
@@ -21,7 +20,7 @@ const Index: NextPage<Props> = ({ data }) => {
       <Head>
         <title>LIVE | Outside Her Vision Official Website</title>
         <meta name='description' content='live' />
-      </Head>{' '}
+      </Head>
       <div className={styles.title}>LIVE</div>
       {lives.map((live) => (
         <div key={live.id} className={styles.box}>
