@@ -5,7 +5,7 @@ div.image_container {
 
   img.image {
     object-fit: contain;
-    width: $contents_width;
+    width: $contents_width_pc;
     height: unset;
     margin-top: $image_margin;
   }
