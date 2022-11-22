@@ -1,3 +1,5 @@
+@import 'styles/variables.scss';
+
 div.image_container {
   text-align: center;
 
@@ -5,5 +7,9 @@ div.image_container {
     object-fit: contain;
     width: 50%;
     height: unset;
+
+    @media screen and (max-width: 600px) {
+      width: $contents_width_sp;
+    }
   }
 }

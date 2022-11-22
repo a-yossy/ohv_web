@@ -8,5 +8,9 @@ div.image_container {
     width: $contents_width_pc;
     height: unset;
     margin-top: $image_margin;
+
+    @media screen and (max-width: 600px) {
+      width: $contents_width_sp;
+    }
   }
 }

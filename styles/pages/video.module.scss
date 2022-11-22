@@ -1,12 +1,18 @@
 @import 'styles/variables.scss';
 
-$height: 315px;
-
 div.videos {
   margin-left: auto;
   margin-right: auto;
   margin-top: $image_margin;
   width: $contents_width_pc;
+
+  @media screen and (max-width: 600px) {
+    width: 480px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 320px;
+  }
 
   div.videoTitle {
     margin-top: 10px;
@@ -14,6 +20,15 @@ div.videos {
 
   iframe.video {
     width: 100%;
-    height: $height;
+    height: 315px;
+    border: none;
+
+    @media screen and (max-width: 600px) {
+      height: 270px;
+    }
+
+    @media screen and (max-width: 500px) {
+      height: 180px;
+    }
   }
 }

@@ -7,6 +7,10 @@ div.box {
   width: $contents_width_pc;
   border: solid 0.1px #ffffff;
 
+  @media screen and (max-width: 600px) {
+    width: $contents_width_sp;
+  }
+
   div.content {
     position: relative;
     padding: 0.5em 1em;
