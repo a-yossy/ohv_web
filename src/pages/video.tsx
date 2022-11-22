@@ -1,11 +1,12 @@
 import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { compareDesc } from 'date-fns';
-import { Video } from 'src/specific/types/video';
+import { Video } from 'src/features/types/video';
 import styles from 'styles/pages/video.module.scss';
 import { client } from 'src/libs/client';
-import { MicroCMSContents } from 'src/specific/types/microCMSContent';
+import { MicroCMSContents } from 'src/features/types/microCMSContent';
 import { Title } from 'src/components/Title';
+import { MICRO_CMS_END_POINTS } from 'src/features/constants/microCMS';
 
 type Props = {
   data: MicroCMSContents<Video>;
@@ -49,7 +50,7 @@ export default Video;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const data = await client.get({
-    endpoint: 'videos',
+    endpoint: MICRO_CMS_END_POINTS.video,
   });
 
   return {

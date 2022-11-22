@@ -3,10 +3,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { format } from 'date-fns';
 import { client } from 'src/libs/client';
-import { Live } from 'src/specific/types/live';
+import { Live } from 'src/features/types/live';
 import NotFoundError from 'src/pages/404';
 import styles from 'styles/pages/live/[id].module.scss';
-import { MicroCMSContents } from 'src/specific/types/microCMSContent';
+import { MicroCMSContents } from 'src/features/types/microCMSContent';
+import { MICRO_CMS_END_POINTS } from 'src/features/constants/microCMS';
 
 type Props = {
   live?: Live;
@@ -50,7 +51,7 @@ export default Live;
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const data: MicroCMSContents<Live> = await client.get({
-    endpoint: 'lives',
+    endpoint: MICRO_CMS_END_POINTS.live,
   });
 
   return {
@@ -64,7 +65,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 }) => {
   if (params !== undefined && typeof params.id === 'string') {
     const live = await client.get({
-      endpoint: 'lives',
+      endpoint: MICRO_CMS_END_POINTS.live,
       contentId: params.id,
     });
 

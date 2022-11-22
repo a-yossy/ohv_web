@@ -3,10 +3,11 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { format, compareDesc } from 'date-fns';
 import { client } from 'src/libs/client';
-import { Live } from 'src/specific/types/live';
+import { Live } from 'src/features/types/live';
 import styles from 'styles/pages/live/index.module.scss';
 import { Title } from 'src/components/Title';
-import { MicroCMSContents } from 'src/specific/types/microCMSContent';
+import { MicroCMSContents } from 'src/features/types/microCMSContent';
+import { MICRO_CMS_END_POINTS } from 'src/features/constants/microCMS';
 
 type Props = {
   data: MicroCMSContents<Live>;
@@ -45,7 +46,7 @@ export default Index;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const data = await client.get({
-    endpoint: 'lives',
+    endpoint: MICRO_CMS_END_POINTS.live,
   });
 
   return {

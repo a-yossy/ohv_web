@@ -3,10 +3,11 @@ import Image from 'next/image';
 import Head from 'next/head';
 import { format } from 'date-fns';
 import { client } from 'src/libs/client';
-import { Music } from 'src/specific/types/music';
+import { Music } from 'src/features/types/music';
 import NotFoundError from 'src/pages/404';
 import styles from 'styles/pages/music/[id].module.scss';
-import { MicroCMSContents } from 'src/specific/types/microCMSContent';
+import { MicroCMSContents } from 'src/features/types/microCMSContent';
+import { MICRO_CMS_END_POINTS } from 'src/features/constants/microCMS';
 
 type Props = {
   music?: Music;
@@ -57,7 +58,7 @@ export default Music;
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const data: MicroCMSContents<Music> = await client.get({
-    endpoint: 'musics',
+    endpoint: MICRO_CMS_END_POINTS.music,
   });
 
   return {
@@ -71,7 +72,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 }) => {
   if (params !== undefined && typeof params.id === 'string') {
     const music = await client.get({
-      endpoint: 'musics',
+      endpoint: MICRO_CMS_END_POINTS.music,
       contentId: params.id,
     });
 

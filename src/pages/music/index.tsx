@@ -4,10 +4,11 @@ import Image from 'next/image';
 import Head from 'next/head';
 import { compareDesc } from 'date-fns';
 import { client } from 'src/libs/client';
-import { Music } from 'src/specific/types/music';
+import { Music } from 'src/features/types/music';
 import styles from 'styles/pages/music/index.module.scss';
-import { MicroCMSContents } from 'src/specific/types/microCMSContent';
+import { MicroCMSContents } from 'src/features/types/microCMSContent';
 import { Title } from 'src/components/Title';
+import { MICRO_CMS_END_POINTS } from 'src/features/constants/microCMS';
 
 type Props = {
   data: MicroCMSContents<Music>;
@@ -48,7 +49,7 @@ export default Index;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const data = await client.get({
-    endpoint: 'musics',
+    endpoint: MICRO_CMS_END_POINTS.music,
   });
 
   return {
