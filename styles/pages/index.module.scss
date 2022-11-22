@@ -1,9 +1,9 @@
-div.imageContainer {
+div.image_container {
   text-align: center;
 
   img.image {
     object-fit: contain;
-    width: 50% !important;
+    width: 50%;
     height: unset !important;
   }
 }

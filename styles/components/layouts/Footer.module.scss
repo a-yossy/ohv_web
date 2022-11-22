@@ -1,6 +1,8 @@
+@import 'styles/variables.scss';
+
 footer.footer {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: $layout_margin;
+  margin-bottom: $layout_margin;
 }
 
 hr.line {
@@ -10,10 +12,10 @@ hr.line {
 
 div.icons {
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
+  margin-top: $layout_margin;
+  margin-bottom: $layout_margin;
 
 a.icon {
   margin-left: 25px;
+}
 }

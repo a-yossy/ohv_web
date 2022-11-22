@@ -6,9 +6,14 @@ import { client } from 'src/libs/client';
 import { Music } from 'src/specific/types/music';
 import NotFoundError from 'src/pages/404';
 import styles from 'styles/pages/music/[id].module.scss';
+import { MicroCMSContents } from 'src/specific/types/microCMSContent';
 
 type Props = {
-  music: Music | undefined;
+  music?: Music;
+};
+
+type Params = {
+  id: string;
 };
 
 const Music: NextPage<Props> = ({ music }) => {
@@ -50,8 +55,8 @@ const Music: NextPage<Props> = ({ music }) => {
 
 export default Music;
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const data: { contents: Music[] } = await client.get({
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
+  const data: MicroCMSContents<Music> = await client.get({
     endpoint: 'musics',
   });
 
@@ -61,7 +66,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<Props, Params> = async ({
+  params,
+}) => {
   if (params !== undefined && typeof params.id === 'string') {
     const music = await client.get({
       endpoint: 'musics',

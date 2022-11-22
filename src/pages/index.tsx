@@ -10,7 +10,7 @@ const Top: NextPage = () => (
       <title>Outside Her Vision Official Website</title>
       <meta name='description' content='top' />
     </Head>
-    <div className={styles.imageContainer}>
+    <div className={styles.image_container}>
       <Image className={styles.image} src={topImage} alt='トップページ画像' />
     </div>
   </>

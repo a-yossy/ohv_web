@@ -1,18 +1,18 @@
-$width: 560px;
+@import 'styles/variables.scss';
 
 div.description {
-  width: $width;
+  width: $contents_width;
   margin-right: auto;
   margin-left: auto;
 
-  div.title {
-    text-align: center;
-    font-size: 30px;
-  }
-
   div.time_place {
     text-align: center;
-    margin-top: 20px;
+    margin-top: $contents_margin;
+  }
+
+  div.title {
+    text-align: center;
+    font-size: $title_font_size;
   }
 
   div.detail {
@@ -21,17 +21,17 @@ div.description {
 
   hr.line {
     border-width: 0.1px 0 0 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: $contents_margin;
+    margin-bottom: $contents_margin;
   }
 }
 
-div.imageContainer {
+div.image_container {
   text-align: center;
 
   img.image {
     object-fit: contain;
     position: relative !important;
-    width: $width !important;
+    width: $contents_width !important;
   }
 }

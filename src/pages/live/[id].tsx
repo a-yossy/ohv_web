@@ -6,9 +6,14 @@ import { client } from 'src/libs/client';
 import { Live } from 'src/specific/types/live';
 import NotFoundError from 'src/pages/404';
 import styles from 'styles/pages/live/[id].module.scss';
+import { MicroCMSContents } from 'src/specific/types/microCMSContent';
 
 type Props = {
-  live: Live | undefined;
+  live?: Live;
+};
+
+type Params = {
+  id: string;
 };
 
 const Live: NextPage<Props> = ({ live }) => {
@@ -20,7 +25,7 @@ const Live: NextPage<Props> = ({ live }) => {
         <title>{live.title} | Outside Her Vision Official Website</title>
         <meta name='description' content='live detail' />
       </Head>
-      <div className={styles.imageContainer}>
+      <div className={styles.image_container}>
         <Image
           className={styles.image}
           src={live.image.url}
@@ -43,8 +48,8 @@ const Live: NextPage<Props> = ({ live }) => {
 
 export default Live;
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const data: { contents: Live[] } = await client.get({
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
+  const data: MicroCMSContents<Live> = await client.get({
     endpoint: 'lives',
   });
 
@@ -54,7 +59,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<Props, Params> = async ({
+  params,
+}) => {
   if (params !== undefined && typeof params.id === 'string') {
     const live = await client.get({
       endpoint: 'lives',

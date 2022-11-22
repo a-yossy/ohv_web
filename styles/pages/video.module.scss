@@ -1,13 +1,10 @@
-div.title {
-  text-align: center;
-  font-size: 30px;
-}
+@import 'styles/variables.scss';
 
 div.video {
-  margin: 0 auto;
-  margin-top: 50px;
-  display: block;
-  width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: $image_margin;
+  width: $contents_width;
 
   div.videoTitle {
     margin-top: 10px;

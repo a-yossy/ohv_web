@@ -4,11 +4,11 @@ import { compareDesc } from 'date-fns';
 import { Video } from 'src/specific/types/video';
 import styles from 'styles/pages/video.module.scss';
 import { client } from 'src/libs/client';
+import { MicroCMSContents } from 'src/specific/types/microCMSContent';
+import { Title } from 'src/components/Title';
 
 type Props = {
-  data: {
-    contents: Video[];
-  };
+  data: MicroCMSContents<Video>;
 };
 
 const Video: NextPage<Props> = ({ data }) => {
@@ -24,7 +24,7 @@ const Video: NextPage<Props> = ({ data }) => {
         <meta name='description' content='video' />
       </Head>
       <div>
-        <div className={styles.title}>VIDEO</div>
+        <Title>VIDEO</Title>
         {videos.map((video) => (
           <div key={video.id} className={styles.video}>
             <iframe

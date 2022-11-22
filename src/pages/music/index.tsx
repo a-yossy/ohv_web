@@ -6,11 +6,11 @@ import { compareDesc } from 'date-fns';
 import { client } from 'src/libs/client';
 import { Music } from 'src/specific/types/music';
 import styles from 'styles/pages/music/index.module.scss';
+import { MicroCMSContents } from 'src/specific/types/microCMSContent';
+import { Title } from 'src/components/Title';
 
 type Props = {
-  data: {
-    contents: Music[];
-  };
+  data: MicroCMSContents<Music>;
 };
 
 const Index: NextPage<Props> = ({ data }) => {
@@ -25,7 +25,7 @@ const Index: NextPage<Props> = ({ data }) => {
         <title>MUSIC | Outside Her Vision Official Website</title>
         <meta name='description' content='music' />
       </Head>
-      <div className={styles.title}>MUSIC</div>
+      <Title>MUSIC</Title>
       {musics.map((music) => (
         <div key={music.id}>
           <div className={styles.imageContainer}>
