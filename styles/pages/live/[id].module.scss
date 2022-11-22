@@ -5,27 +5,18 @@ div.description {
   margin-right: auto;
   margin-left: auto;
 
-  div.type {
-    text-align: center;
-    margin-top: 20px;
-  }
-
   div.title {
     text-align: center;
     font-size: 30px;
   }
 
-  div.release {
+  div.time_place {
     text-align: center;
+    margin-top: 20px;
   }
 
-  div.song {
+  div.detail {
     white-space: pre-line;
-  }
-
-  div.link {
-    margin-top: 5px;
-    color: rgb(201, 201, 151);
   }
 
   hr.line {
@@ -36,7 +27,6 @@ div.description {
 }
 
 div.imageContainer {
-  position: unset !important;
   text-align: center;
 
   img.image {
