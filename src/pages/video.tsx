@@ -36,7 +36,7 @@ const Video: NextPage<Props> = ({ data }) => {
               allowFullScreen
             />
             <br />
-            <div className={styles.videoTitle}>{video.title}</div>
+            {video.title}
           </div>
         ))}
       </div>
