@@ -1,4 +1,6 @@
+@import 'styles/variables.scss';
+
 div.title {
   text-align: center;
-  font-size: 30px;
+  font-size: $title_font_size;
 }

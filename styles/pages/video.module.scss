@@ -1,6 +1,8 @@
 @import 'styles/variables.scss';
 
-div.video {
+$height: 315px;
+
+div.videos {
   margin-left: auto;
   margin-right: auto;
   margin-top: $image_margin;
@@ -8,5 +10,10 @@ div.video {
 
   div.videoTitle {
     margin-top: 10px;
+  }
+
+  iframe.video {
+    width: 100%;
+    height: $height;
   }
 }

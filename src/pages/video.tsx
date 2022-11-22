@@ -27,16 +27,15 @@ const Video: NextPage<Props> = ({ data }) => {
       <div>
         <Title>VIDEO</Title>
         {videos.map((video) => (
-          <div key={video.id} className={styles.video}>
+          <div key={video.id} className={styles.videos}>
             <iframe
-              width='560'
-              height='315'
+              className={styles.video}
               src={`https://www.youtube.com/embed/${video.youtubeIdentifier}`}
               title='YouTube video player'
               frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen
-            ></iframe>
+            />
             <br />
             <div className={styles.videoTitle}>{video.title}</div>
           </div>
