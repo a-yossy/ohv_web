@@ -26,12 +26,13 @@ const Music: NextPage<Props> = ({ music }) => {
         <title>{music.title} | Outside Her Vision Official Website</title>
         <meta name='description' content='music detail' />
       </Head>
-      <div className={styles.imageContainer}>
+      <div className={styles.image_container}>
         <Image
           className={styles.image}
           src={music.image.url}
           alt={music.title}
-          fill={true}
+          width={Number(music.image.width)}
+          height={Number(music.image.height)}
         />
       </div>
       <div className={styles.description}>

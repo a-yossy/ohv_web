@@ -35,13 +35,13 @@ div.description {
   }
 }
 
-div.imageContainer {
-  position: unset !important;
+div.image_container {
   text-align: center;
 
   img.image {
     object-fit: contain;
-    position: relative !important;
-    width: $contents_width !important;
+    width: $contents_width;
+    height: unset;
+    margin-top: $image_margin;
   }
 }

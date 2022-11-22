@@ -31,7 +31,8 @@ const Live: NextPage<Props> = ({ live }) => {
           className={styles.image}
           src={live.image.url}
           alt={live.title}
-          fill={true}
+          width={Number(live.image.width)}
+          height={Number(live.image.height)}
         />
       </div>
       <div className={styles.description}>

@@ -29,13 +29,14 @@ const Index: NextPage<Props> = ({ data }) => {
       <Title>MUSIC</Title>
       {musics.map((music) => (
         <div key={music.id}>
-          <div className={styles.imageContainer}>
+          <div className={styles.image_container}>
             <Link href={`/music/${music.id}`}>
               <Image
                 className={styles.image}
                 src={music.image.url}
                 alt={music.title}
-                fill={true}
+                width={Number(music.image.width)}
+                height={Number(music.image.height)}
               />
             </Link>
           </div>
