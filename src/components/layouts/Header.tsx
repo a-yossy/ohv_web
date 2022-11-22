@@ -13,7 +13,7 @@ export const Header: FC = () => (
       <Link className={styles.rightLink} href='/'>
         BIO
       </Link>
-      <Link className={styles.rightLink} href='/'>
+      <Link className={styles.rightLink} href='/live'>
         LIVE
       </Link>
       <Link className={styles.rightLink} href='/music'>
