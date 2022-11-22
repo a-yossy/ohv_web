@@ -5,24 +5,24 @@ header.header {
   margin-bottom: $layout_margin;
 }
 
-div.rightLinks,
-div.leftLinks {
+div.right_links,
+div.left_links {
   display: inline-flex;
   height: 60px;
   align-items: center;
 }
 
-div.leftLinks {
+div.left_links {
 
   a.logo {
     margin-left: 30px;
   }
 }
 
-div.rightLinks {
+div.right_links {
   float: right;
 
-  a.rightLink {
+  a.right_link {
     margin-right: 30px;
   }
 }
