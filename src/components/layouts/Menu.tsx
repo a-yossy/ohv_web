@@ -11,6 +11,17 @@ type Props = {
 export const Menu: FC<Props> = ({ isOpen, handleClose }) => {
   const router = useRouter();
 
+  const stopScrollingBackContent = () => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  };
+
+  useEffect(stopScrollingBackContent, [isOpen]);
+
   useEffect(() => {
     handleClose();
   }, [handleClose, router.asPath]);
@@ -19,30 +30,33 @@ export const Menu: FC<Props> = ({ isOpen, handleClose }) => {
     <>
       {isOpen ? (
         <div id='overlay'>
-          <Link
-            href='/'
-            onClick={router.asPath === '/' ? handleClose : undefined}
-          >
-            <div className={styles.modal_contents}>BIO</div>
-          </Link>
-          <Link
-            href='/live'
-            onClick={router.asPath === '/live' ? handleClose : undefined}
-          >
-            <div className={styles.modal_contents}>LIVE</div>
-          </Link>
-          <Link
-            href='/music'
-            onClick={router.asPath === '/music' ? handleClose : undefined}
-          >
-            <div className={styles.modal_contents}>MUSIC</div>
-          </Link>
-          <Link
-            href='/video'
-            onClick={router.asPath === '/video' ? handleClose : undefined}
-          >
-            <div className={styles.modal_contents}>VIDEO</div>
-          </Link>
+          <div className={styles.modal}>
+            <Link
+              href='/'
+              onClick={router.asPath === '/' ? handleClose : undefined}
+            >
+              <div className={styles.modal_contents}>BIO</div>
+            </Link>
+            <Link
+              href='/live'
+              onClick={router.asPath === '/live' ? handleClose : undefined}
+            >
+              <div className={styles.modal_contents}>LIVE</div>
+            </Link>
+            <Link
+              href='/music'
+              onClick={router.asPath === '/music' ? handleClose : undefined}
+            >
+              <div className={styles.modal_contents}>MUSIC</div>
+            </Link>
+            <Link
+              href='/video'
+              onClick={router.asPath === '/video' ? handleClose : undefined}
+            >
+              <div className={styles.modal_contents}>VIDEO</div>
+            </Link>
+            <div className={styles.non_scroll}></div>
+          </div>
         </div>
       ) : null}
     </>

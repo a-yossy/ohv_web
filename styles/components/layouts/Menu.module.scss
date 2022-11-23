@@ -1,6 +1,9 @@
-div.modal_contents {
-  border-bottom: solid 0.1px;
-  font-size: 20px;
-  text-align: center;
-  line-height: 60px;
+div.modal {
+  div.modal_contents {
+    height: 60px;
+    border-bottom: solid 0.1px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+  }
 }
