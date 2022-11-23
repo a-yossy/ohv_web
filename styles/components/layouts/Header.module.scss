@@ -1,25 +1,51 @@
+@import 'styles/variables.scss';
+
 header.header {
   background: rgb(16, 18, 30);
-  margin-bottom: 40px;
+  margin-bottom: $layout_margin;
 }
 
-div.rightLinks,
-div.leftLinks {
-  display: inline-flex;
+div.links {
   height: 60px;
+  display: flex;
   align-items: center;
-}
 
-div.leftLinks {
-  a.logo {
-    margin-left: 35px;
+  @media screen and (max-width: 600px) {
+    justify-content: center;
   }
-}
 
-div.rightLinks {
-  float: right;
+  div.lefts {
+    a.logo {
+      font-size: 20px;
 
-  a.rightLink {
-    margin-right: 35px;
+      @media screen and (min-width: 601px) {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  div.rights {
+    position: absolute;
+    right: 10px;
+
+    a.link {
+      margin-right: 30px;
+
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+    }
+
+    button.no_decoration {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+
+      @media screen and (min-width: 601px) {
+          display: none;
+      }
+    }
   }
 }

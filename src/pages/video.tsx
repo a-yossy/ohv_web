@@ -1,14 +1,15 @@
 import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { compareDesc } from 'date-fns';
-import { Video } from 'src/specific/types/video';
+import { Video } from 'src/features/types/video';
 import styles from 'styles/pages/video.module.scss';
 import { client } from 'src/libs/client';
+import { MicroCMSContents } from 'src/features/types/microCMSContent';
+import { Title } from 'src/components/Title';
+import { MICRO_CMS_END_POINTS } from 'src/features/constants/microCMS';
 
 type Props = {
-  data: {
-    contents: Video[];
-  };
+  data: MicroCMSContents<Video>;
 };
 
 const Video: NextPage<Props> = ({ data }) => {
@@ -24,20 +25,18 @@ const Video: NextPage<Props> = ({ data }) => {
         <meta name='description' content='video' />
       </Head>
       <div>
-        <div className={styles.title}>VIDEO</div>
+        <Title>VIDEO</Title>
         {videos.map((video) => (
-          <div key={video.id} className={styles.video}>
+          <div key={video.id} className={styles.videos}>
             <iframe
-              width='560'
-              height='315'
+              className={styles.video}
               src={`https://www.youtube.com/embed/${video.youtubeIdentifier}`}
               title='YouTube video player'
-              frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen
-            ></iframe>
+            />
             <br />
-            <div className={styles.videoTitle}>{video.title}</div>
+            {video.title}
           </div>
         ))}
       </div>
@@ -49,7 +48,7 @@ export default Video;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const data = await client.get({
-    endpoint: 'videos',
+    endpoint: MICRO_CMS_END_POINTS.video,
   });
 
   return {

@@ -4,13 +4,14 @@ import Image from 'next/image';
 import Head from 'next/head';
 import { compareDesc } from 'date-fns';
 import { client } from 'src/libs/client';
-import { Music } from 'src/specific/types/music';
+import { Music } from 'src/features/types/music';
 import styles from 'styles/pages/music/index.module.scss';
+import { MicroCMSContents } from 'src/features/types/microCMSContent';
+import { Title } from 'src/components/Title';
+import { MICRO_CMS_END_POINTS } from 'src/features/constants/microCMS';
 
 type Props = {
-  data: {
-    contents: Music[];
-  };
+  data: MicroCMSContents<Music>;
 };
 
 const Index: NextPage<Props> = ({ data }) => {
@@ -25,16 +26,17 @@ const Index: NextPage<Props> = ({ data }) => {
         <title>MUSIC | Outside Her Vision Official Website</title>
         <meta name='description' content='music' />
       </Head>
-      <div className={styles.title}>MUSIC</div>
+      <Title>MUSIC</Title>
       {musics.map((music) => (
         <div key={music.id}>
-          <div className={styles.imageContainer}>
+          <div className={styles.image_container}>
             <Link href={`/music/${music.id}`}>
               <Image
                 className={styles.image}
                 src={music.image.url}
                 alt={music.title}
-                fill={true}
+                width={Number(music.image.width)}
+                height={Number(music.image.height)}
               />
             </Link>
           </div>
@@ -48,7 +50,7 @@ export default Index;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const data = await client.get({
-    endpoint: 'musics',
+    endpoint: MICRO_CMS_END_POINTS.music,
   });
 
   return {

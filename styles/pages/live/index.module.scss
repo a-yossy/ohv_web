@@ -1,19 +1,19 @@
-div.title {
-  text-align: center;
-  font-size: 30px;
-}
+@import 'styles/variables.scss';
 
 div.box {
-  margin-top: 20px;
+  margin-top: $contents_margin;
   margin-left: auto;
   margin-right: auto;
-  width: 560px;
+  width: $contents_width_pc;
   border: solid 0.1px #ffffff;
+
+  @media screen and (max-width: 600px) {
+    width: $contents_width_sp;
+  }
 
   div.content {
     position: relative;
-      padding: 0.5em 1em;
-      transition: all  0.3s ease;
+    padding: 0.5em 1em;
 
     a {
       position:absolute;
