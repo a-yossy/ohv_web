@@ -6,7 +6,7 @@ const NotFoundError: NextPage = () => (
   <>
     <Head>
       <title>Not Found | Outside Her Vision Official Website</title>
-      <meta name='description' content='page not found' />
+      <meta name='description' content='エラーページ' />
     </Head>
     <div className={styles.title}>ページが見つかりません</div>
   </>

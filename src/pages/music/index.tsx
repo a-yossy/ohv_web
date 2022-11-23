@@ -24,7 +24,7 @@ const Index: NextPage<Props> = ({ data }) => {
     <>
       <Head>
         <title>MUSIC | Outside Her Vision Official Website</title>
-        <meta name='description' content='music' />
+        <meta name='description' content='音源ページ' />
       </Head>
       <Title>MUSIC</Title>
       {musics.map((music) => (

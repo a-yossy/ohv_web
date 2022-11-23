@@ -24,7 +24,7 @@ const Music: NextPage<Props> = ({ music }) => {
     <>
       <Head>
         <title>{music.title} | Outside Her Vision Official Website</title>
-        <meta name='description' content='music detail' />
+        <meta name='description' content='音源詳細ページ' />
       </Head>
       <div className={styles.image_container}>
         <Image

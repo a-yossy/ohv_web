@@ -23,7 +23,7 @@ const Index: NextPage<Props> = ({ data }) => {
     <>
       <Head>
         <title>LIVE | Outside Her Vision Official Website</title>
-        <meta name='description' content='live' />
+        <meta name='description' content='ライブページ' />
       </Head>
       <Title>LIVE</Title>
       {lives.map((live) => (

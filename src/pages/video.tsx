@@ -22,7 +22,7 @@ const Video: NextPage<Props> = ({ data }) => {
     <>
       <Head>
         <title>VIDEO | Outside Her Vision Official Website</title>
-        <meta name='description' content='video' />
+        <meta name='description' content='映像ページ' />
       </Head>
       <div>
         <Title>VIDEO</Title>

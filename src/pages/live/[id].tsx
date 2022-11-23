@@ -24,7 +24,7 @@ const Live: NextPage<Props> = ({ live }) => {
     <>
       <Head>
         <title>{live.title} | Outside Her Vision Official Website</title>
-        <meta name='description' content='live detail' />
+        <meta name='description' content='ライブ詳細ページ' />
       </Head>
       <div className={styles.image_container}>
         <Image
