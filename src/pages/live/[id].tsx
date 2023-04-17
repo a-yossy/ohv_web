@@ -20,6 +20,8 @@ type Params = {
 const Live: NextPage<Props> = ({ live }) => {
   if (live === undefined) return <NotFoundError />;
 
+  console.log(live);
+
   return (
     <>
       <Head>
@@ -42,7 +44,33 @@ const Live: NextPage<Props> = ({ live }) => {
         </div>
         <div className={styles.title}>{live.title}</div>
         <hr className={styles.line} />
-        <div className={styles.detail}>{live.detail}</div>
+        <div className={styles.detail}>
+          act/
+          {`\n`}
+          {live.act}
+          {`\n`}
+          {`\n`}
+          OPEN&nbsp;
+          {live.openedAt ? format(new Date(live.openedAt), 'HH:mm') : 'TBA'}
+          &nbsp;/&nbsp;START&nbsp;
+          {live.startedAt ? format(new Date(live.startedAt), 'HH:mm') : 'TBA'}
+          {`\n`}
+          ADV&nbsp;
+          {live.advPrice
+            ? new Intl.NumberFormat('ja-JP', {
+                style: 'currency',
+                currency: 'JPY',
+              }).format(live.advPrice)
+            : 'TBA'}
+          {live.existsDrink && ` + 1DRINK`}&nbsp;/&nbsp;DOOR&nbsp;
+          {live.doorPrice
+            ? new Intl.NumberFormat('ja-JP', {
+                style: 'currency',
+                currency: 'JPY',
+              }).format(live.doorPrice)
+            : 'TBA'}
+          {live.existsDrink && ` + 1DRINK`}
+        </div>
       </div>
     </>
   );
