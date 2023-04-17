@@ -12,5 +12,10 @@ export type Live = {
     height: string;
     width: string;
   };
-  detail: string;
+  act: string;
+  openedAt?: string;
+  startedAt?: string;
+  advPrice?: number;
+  doorPrice?: number;
+  existsDrink?: boolean;
 };
