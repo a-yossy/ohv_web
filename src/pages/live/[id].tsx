@@ -20,8 +20,6 @@ type Params = {
 const Live: NextPage<Props> = ({ live }) => {
   if (live === undefined) return <NotFoundError />;
 
-  console.log(live);
-
   return (
     <>
       <Head>
