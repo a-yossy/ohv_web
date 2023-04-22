@@ -54,14 +54,14 @@ const Live: NextPage<Props> = ({ live }) => {
           {live.startedAt ? format(new Date(live.startedAt), 'HH:mm') : 'TBA'}
           {`\n`}
           ADV&nbsp;
-          {live.advPrice
+          {live.advPrice || live.advPrice === 0
             ? new Intl.NumberFormat('ja-JP', {
                 style: 'currency',
                 currency: 'JPY',
               }).format(live.advPrice)
             : 'TBA'}
           {live.existsDrink && ` + 1DRINK`}&nbsp;/&nbsp;DOOR&nbsp;
-          {live.doorPrice
+          {live.doorPrice || live.doorPrice === 0
             ? new Intl.NumberFormat('ja-JP', {
                 style: 'currency',
                 currency: 'JPY',
