@@ -15,10 +15,11 @@ type Props = {
 };
 
 const Index: NextPage<Props> = ({ data }) => {
-  const musics = data.contents;
-  musics.sort((a, b) =>
-    compareDesc(new Date(a.releasedAt), new Date(b.releasedAt))
-  );
+  const musics = data.contents
+    .slice()
+    .sort((a, b) =>
+      compareDesc(new Date(a.releasedAt), new Date(b.releasedAt))
+    );
 
   return (
     <>

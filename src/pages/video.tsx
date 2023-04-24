@@ -13,10 +13,11 @@ type Props = {
 };
 
 const Video: NextPage<Props> = ({ data }) => {
-  const videos = data.contents;
-  videos.sort((a, b) =>
-    compareDesc(new Date(a.publishedAt), new Date(b.publishedAt))
-  );
+  const videos = data.contents
+    .slice()
+    .sort((a, b) =>
+      compareDesc(new Date(a.publishedAt), new Date(b.publishedAt))
+    );
 
   return (
     <>

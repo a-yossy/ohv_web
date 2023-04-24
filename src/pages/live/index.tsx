@@ -14,10 +14,11 @@ type Props = {
 };
 
 const Index: NextPage<Props> = ({ data }) => {
-  const lives = data.contents;
-  lives.sort((a, b) =>
-    compareDesc(new Date(a.performancedAt), new Date(b.performancedAt))
-  );
+  const lives = data.contents
+    .slice()
+    .sort((a, b) =>
+      compareDesc(new Date(a.performancedAt), new Date(b.performancedAt))
+    );
 
   return (
     <>
