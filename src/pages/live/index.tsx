@@ -24,7 +24,7 @@ const Index: NextPage<Props> = ({ data }) => {
       compareDesc(new Date(a.performancedAt), new Date(b.performancedAt))
     );
 
-  const PER_PAGE = 9;
+  const PER_PAGE = 6;
   const TOTAL_PAGE = Math.ceil(lives.length / PER_PAGE);
   const FIRST_PAGE = 1;
   const router = useRouter();
