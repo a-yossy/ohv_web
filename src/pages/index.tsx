@@ -8,9 +8,9 @@ const Top: NextPage = () => (
   <>
     <Head>
       <title>Outside Her Vision Official Website</title>
-      <meta name='og:title' content='Outside Her Vision Official Website' />
-      <meta name='description' content='トップページ' />
-      <meta name='og:image' content='/public/top.jpg' />
+      <meta property='og:title' content='Outside Her Vision Official Website' />
+      <meta property='og:description' content='トップページ' />
+      <meta property='og:image' content='/public/top.jpg' />
       <meta name='twitter:card' content='summary_large_image' />
     </Head>
     <div className={styles.image_container}>
