@@ -33,7 +33,7 @@ export const Menu: FC<Props> = ({ isOpen, handleClose }) => {
           <div className={styles.modal}>
             <Link
               href='/'
-              onClick={router.asPath === '/' ? handleClose : undefined}
+              onClick={router.asPath === '/bio' ? handleClose : undefined}
             >
               <div className={styles.modal_contents}>BIO</div>
             </Link>
