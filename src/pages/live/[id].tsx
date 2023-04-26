@@ -63,7 +63,7 @@ const Live: NextPage<Props> = ({ live }) => {
                 currency: 'JPY',
               }).format(live.advPrice)
             : 'TBA'}
-          {live.existsDrink && ` + 1DRINK`}&nbsp;/&nbsp;DOOR&nbsp;
+          &nbsp;/&nbsp;DOOR&nbsp;
           {live.doorPrice || live.doorPrice === 0
             ? new Intl.NumberFormat('ja-JP', {
                 style: 'currency',
