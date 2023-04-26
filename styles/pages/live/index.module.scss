@@ -42,7 +42,7 @@ div.pager {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  width: 400px;
+  width: 300px;
 
   div.content {
     position: relative;
@@ -51,7 +51,7 @@ div.pager {
     height: 50px;
 
     button.prev {
-      right: 60%;
+      right: 65%;
       position: absolute;
       z-index: 1;
       padding: 0.5rem 2rem;
@@ -63,7 +63,7 @@ div.pager {
     }
 
     button.next {
-      left: 60%;
+      left: 65%;
       position: absolute;
       z-index: 1;
       padding: 0.5rem 2rem;
