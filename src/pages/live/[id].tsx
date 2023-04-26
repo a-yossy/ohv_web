@@ -7,7 +7,10 @@ import { Live } from 'src/features/types/live';
 import NotFoundError from 'src/pages/404';
 import styles from 'styles/pages/live/[id].module.scss';
 import { MicroCMSContents } from 'src/features/types/microCMSContent';
-import { MICRO_CMS_END_POINTS } from 'src/features/constants/microCMS';
+import {
+  ALL_LIVES_QUERY_PARAMETER,
+  MICRO_CMS_END_POINTS,
+} from 'src/features/constants/microCMS';
 
 type Props = {
   live?: Live;
@@ -78,7 +81,7 @@ export default Live;
 
 export const getStaticPaths: GetStaticPaths<Params> = async () => {
   const data: MicroCMSContents<Live> = await client.get({
-    endpoint: MICRO_CMS_END_POINTS.live,
+    endpoint: `${MICRO_CMS_END_POINTS.live}?${ALL_LIVES_QUERY_PARAMETER}`,
   });
 
   return {

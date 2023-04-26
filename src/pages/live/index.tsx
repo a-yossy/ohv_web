@@ -7,7 +7,10 @@ import { Live } from 'src/features/types/live';
 import styles from 'styles/pages/live/index.module.scss';
 import { Title } from 'src/components/Title';
 import { MicroCMSContents } from 'src/features/types/microCMSContent';
-import { MICRO_CMS_END_POINTS } from 'src/features/constants/microCMS';
+import {
+  ALL_LIVES_QUERY_PARAMETER,
+  MICRO_CMS_END_POINTS,
+} from 'src/features/constants/microCMS';
 
 type Props = {
   data: MicroCMSContents<Live>;
@@ -47,7 +50,7 @@ export default Index;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const data = await client.get({
-    endpoint: MICRO_CMS_END_POINTS.live,
+    endpoint: `${MICRO_CMS_END_POINTS.live}?${ALL_LIVES_QUERY_PARAMETER}`,
   });
 
   return {
