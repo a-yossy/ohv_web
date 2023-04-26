@@ -37,7 +37,7 @@ export const Header: FC = () => {
               {isOpen && <TfiClose size={20} onClick={handleClose} />}
               {!isOpen && <FaBars size={20} onClick={handleOpen} />}
             </button>
-            <Link className={styles.link} href='/'>
+            <Link className={styles.link} href='/bio'>
               BIO
             </Link>
             <Link className={styles.link} href='/live'>
