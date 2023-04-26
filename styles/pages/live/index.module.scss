@@ -36,3 +36,48 @@ div.box {
     font-size: 13px;
   }
 }
+
+div.pager {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  div.content {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    button.prev {
+      right: 60%;
+      position: absolute;
+      z-index: 1;
+    padding: 0.25rem 1rem;
+    border: 2px solid #024054;
+    color: #ffffff;
+    background: #092226;
+    border-radius: 100vh;
+    transition: 0.5s;
+    }
+
+    button.next {
+      left: 60%;
+      position: absolute;
+      z-index: 1;
+      padding: 0.25rem 1rem;
+      border: 2px solid #024054;
+      color: #ffffff;
+      background: #092226;
+      border-radius: 100vh;
+      transition: 0.5s;
+    }
+
+    span.page {
+      position: absolute;
+      right: 0;
+      left: 0;
+    }
+  }
+}
