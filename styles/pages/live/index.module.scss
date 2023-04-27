@@ -26,10 +26,6 @@ div.box {
 
   div.content:hover {
     background-color: #08082d;
-
-    @media screen and (max-width: 600px) {
-      background-color: black;
-    }
   }
 
   div.time_place {
