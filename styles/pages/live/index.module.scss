@@ -60,6 +60,7 @@ div.pager {
       background: #092226;
       border-radius: 100vh;
       transition: 0.5s;
+      cursor: pointer;
     }
 
     button.next {
@@ -72,6 +73,11 @@ div.pager {
       background: #011a1e;
       border-radius: 100vh;
       transition: 0.5s;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #092b30;
     }
 
     span.page {
