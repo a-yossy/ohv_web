@@ -26,6 +26,10 @@ div.box {
 
   div.content:hover {
     background-color: #08082d;
+
+    @media screen and (max-width: 600px) {
+      background-color: black;
+    }
   }
 
   div.time_place {
@@ -66,7 +70,7 @@ div.pager {
       padding: 0.5rem 2rem;
       border: 2px solid #033241;
       color: #ffffff;
-      background: #011a1e;
+      background: #092226;
       border-radius: 100vh;
       transition: 0.5s;
       cursor: pointer;
@@ -74,6 +78,10 @@ div.pager {
 
     button:hover {
       background: #092b30;
+
+      @media screen and (max-width: 600px) {
+        background: #092226;
+      }
     }
 
     span.page {
