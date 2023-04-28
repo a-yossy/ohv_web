@@ -13,6 +13,7 @@ const Bio: NextPage = () => (
     <div className={styles.image_container}>
       <Image className={styles.image} src={bioImage} alt='BIOページ画像' />
     </div>
+    <div className={styles.profile}>Japanese True Melodic Hardcore</div>
   </>
 );
 
