@@ -12,6 +12,7 @@ import {
   MICRO_CMS_END_POINTS,
 } from 'src/features/constants/microCMS';
 import { useRouter } from 'next/router';
+import { ChangeEvent, useState } from 'react';
 
 type Props = {
   data: MicroCMSContents<Live>;
@@ -23,15 +24,38 @@ const Index: NextPage<Props> = ({ data }) => {
     .sort((a, b) =>
       compareDesc(new Date(a.performancedAt), new Date(b.performancedAt))
     );
+  const liveMonths = Array.from(
+    new Set(
+      lives
+        .slice()
+        .map((live) => format(new Date(live.performancedAt), 'yyyy-MM'))
+    )
+  );
+  const [sortedLives, setSortedLives] = useState(lives);
 
   const PER_PAGE = 5;
-  const TOTAL_PAGE = Math.ceil(lives.length / PER_PAGE);
+  const TOTAL_PAGE = Math.ceil(sortedLives.length / PER_PAGE);
   const FIRST_PAGE = 1;
   const router = useRouter();
   const pageParam = Array.isArray(router.query.page)
     ? router.query.page[0]
     : router.query.page;
+
   const page = Number(pageParam) || FIRST_PAGE;
+
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const newLives =
+      e.target.value === 'all'
+        ? lives
+        : lives
+            .slice()
+            .filter(
+              (live) =>
+                format(new Date(live.performancedAt), 'yyyy-MM') ===
+                e.target.value
+            );
+    setSortedLives(newLives);
+  };
 
   return (
     <>
@@ -40,7 +64,15 @@ const Index: NextPage<Props> = ({ data }) => {
         <meta name='description' content='ライブページ' />
       </Head>
       <Title>LIVE</Title>
-      {lives.slice((page - 1) * PER_PAGE, page * PER_PAGE).map((live) => (
+      <select onChange={(e) => handleChange(e)}>
+        <option value='all'>all</option>
+        {liveMonths.map((liveMonth) => (
+          <option value={liveMonth} key={liveMonth}>
+            {liveMonth}
+          </option>
+        ))}
+      </select>
+      {sortedLives.slice((page - 1) * PER_PAGE, page * PER_PAGE).map((live) => (
         <div key={live.id} className={styles.box}>
           <div className={styles.content}>
             <div className={styles.time_place}>
