@@ -78,14 +78,16 @@ const Index: NextPage<Props> = ({ data }) => {
         <meta name='description' content='ライブページ' />
       </Head>
       <Title>LIVE</Title>
-      <select onChange={(e) => handleChange(e)} value={sort}>
-        <option value='all'>all</option>
-        {liveMonths.map((liveMonth) => (
-          <option value={liveMonth} key={liveMonth}>
-            {liveMonth}
-          </option>
-        ))}
-      </select>
+      <div className={styles.select}>
+        <select onChange={(e) => handleChange(e)} value={sort}>
+          <option value='all'>all</option>
+          {liveMonths.map((liveMonth) => (
+            <option value={liveMonth} key={liveMonth}>
+              {liveMonth}
+            </option>
+          ))}
+        </select>
+      </div>
       {sortedLives.slice((page - 1) * PER_PAGE, page * PER_PAGE).map((live) => (
         <div key={live.id} className={styles.box}>
           <div className={styles.content}>
